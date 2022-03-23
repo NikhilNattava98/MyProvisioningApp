@@ -1,0 +1,41 @@
+{
+  "name": "crd_testautomation",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "preinstall1": "npx npm-force-resolutions",
+    "cucumber": ".\\node_modules\\.bin\\cucumber-js --tags @Test001",
+    "test": "npm run cucumber & .\\node_modules\\.bin\\ts-node src/reporter/reporter.ts",
+    "pretest1": "npx ts-node Curl.ts ${TestPlan} ${TestExecution} ${JiraUserName} ${JiraPassword} ${TestToSelect}",
+    "posttest1": "curl -k --noproxy '*' -H \"Content-Type:application/json\" -X POST -u ${JiraUserName}:${JiraPassword} --data @reports/cucumber-report.json https://dmo-jira.detss.corpintra.net/rest/raven/1.0/import/execution/cucumber",
+    "e2e": "./node_modules/.bin/cucumber-js --tags \"@CRD-20004 or @CRD-20005\" ; ./node_modules/.bin/ts-node src/reporter/reporter.ts"
+  },
+  "author": "MBRDI",
+  "license": "",
+  "dependencies": {
+    "@cucumber/cucumber": "^7.3.1",
+    "@types/chai": "^4.2.22",
+    "@types/cucumber": "^7.0.0",
+    "chai": "^4.2.0",
+    "crypto-random-string": "^4.0.0",
+    "cucumber-html-reporter": "^5.5.0",
+    "dotenv": "^10.0.0",
+    "jira-client-xray": "1.0.1",
+    "jquery": "^3.6.0",
+    "pdf-to-base64": "1.0.3",
+    "pg": "^8.7.1",
+    "soft-assert": "^0.2.6",
+    "ts-node": "^10.3.0",
+    "typescript": "^4.4.4",
+    "urllib": "^2.37.4"
+  },
+  "devDependencies": {
+    "@types/jquery": "^3.5.8",
+    "playwright": "^1.19.2"
+  },
+  "resolutions": {
+    "ansi-regex": "^5.0.1",
+    "vm2": "^3.9.4"
+  }
+}

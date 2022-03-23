@@ -1,0 +1,18 @@
+FROM reg-dhc.app.corpintra.net/i3-mirror/mcr.microsoft.com_playwright:v1.7.1-bionic
+
+RUN apt-get update -yqq && apt-get install -yqq curl
+
+# Add user that Jenkins will use inside container (ID 900)
+RUN adduser --uid 900 jenkins_user
+RUN mkdir /npm-cache /app
+RUN chown 900 /npm-cache /app
+USER jenkins_user
+
+# Install  dependencies
+WORKDIR /app
+
+RUN npm config set cache /npm-cache
+RUN npm config set prefix /app
+
+COPY package.json package-lock.json ./
+RUN npm ci

@@ -1,0 +1,32 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+
+        {
+            "args": [
+                "features/*.feature", "--require-module", "ts-node/register",  "--require", "./src/steps/*.ts", "--require", "./src/hooks/hooks.ts" ,"--format" ,"json:reports/cucumber-report.json"
+            ],
+            "internalConsoleOptions": "openOnSessionStart",
+            "name": "Cucumber Tests",
+            "program": "${workspaceFolder}/node_modules/@cucumber/cucumber/bin/cucumber-js",
+            "request": "launch",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "type": "pwa-node"
+        },
+
+        {
+            "type": "pwa-node",
+            "request": "launch",
+            "name": "Launch Program",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "program": "${workspaceFolder}//node_modules//.bin//cucumber",
+        }
+    ]
+}

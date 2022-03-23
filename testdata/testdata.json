@@ -1,0 +1,53 @@
+{
+    "common": {
+        "Project": {
+            "TestProp": {
+                "Delaylevel_1": 1000,
+                "Delaylevel_2": 2400,
+                "Delaylevel_3": 3400,
+                "Delaylevel_4": 4800,
+                "TimeoutLevel_1": 10000,
+                "TimeoutLevel_2": 20000,
+                "TimeoutLevel_3": 900000
+            },
+            "Devices": {
+                "Device": "laptop"
+            },
+            "BrowserProp": {
+                "Headless": "false",
+                "Browser": "Chromium"
+            }
+        },
+        "application": {
+            "MPA": {
+                "MyPrApp": "http://sgscviw50016.inedc.corpintra.net:92/Home?sessionExpired=true"
+            }
+        },
+        "general": {
+            "jira": {
+                "server": ""
+            }
+        },
+        "database": {
+            "user": "admin",
+            "host": "53.6.251.175",
+            "database": "db",
+            "password": "admin",
+            "port": 80
+        }
+    },
+    "features": {
+        "My_Provision_App": {
+            "Year1":"2020",
+            "Year2":"2021",
+            "Month1": "8",
+            "Month2": "9",
+            "Country1": "Athlon United Kingdom",
+            "Country2": "Netherlands",
+            "Country3": "United Kingdom",
+            "File208SA":"C:\\Users\\NNATTAV\\Desktop\\MyProvision_Repository\\MyProvisioningApp\\fileupload\\WL_PCL_ZA_20210630_customer_level (2).xlsx",
+            "File208N": "C:\\Users\\NNATTAV\\Desktop\\MyProvision_Repository\\MyProvisioningApp\\fileupload\\WLPCL_NL_20210731_CustomerLevel (3).xlsx"
+        }
+        
+    }
+}

@@ -1,0 +1,18 @@
+{
+    "ButtonLogout": "//span[text()='Logout']",
+    "ButtonFOCLogout": "button[title='Logout']",
+    "PopupTitle": "//div[@class='crd-dialog__title']",
+    "OuterTabs": "//span[@class='ui-tabview-title text-overflow ng-star-inserted']",
+    "InnerTabs": "//span[@class='ui-tabview-title ng-star-inserted']",
+    "Title": "//div[@class='title']",
+    "CustomerTitle": "//div[@class='customer-management_tab']",
+    "HomeTab": "//a[@id='ui-tabpanel-0-label']",
+    "CusromerGroupIcon": "//span[contains(@class,'tab-icon icon-8_customer-group')]",
+    "AddRelationPopUp": "//div[contains(@class,'add_relation_grouping_tab')][1]",
+    "ChangeRelationTitle": "//div[@class='title_1 ng-star-inserted']",
+    "CreateNewCustomer": "//span[text()='Create New Customer']",
+    "GroupSupportViewDropDown": "//label[text()='Group Support View']",
+    "DropDownOptions": "//div[@class='dropdown-group-support-options ng-star-inserted']",
+    "SelecrGroupSupportCriteriaDP": "//p-dropdown[@formcontrolname='groupSupportCriteria']",
+    "AddOrEditGroup": "//*[text()=' Add / Edit Group Support ']"
+}
