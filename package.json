@@ -32,7 +32,7 @@
   },
   "devDependencies": {
     "@types/jquery": "^3.5.8",
-    "playwright": "^1.19.2"
+    "playwright": "^1.20.1"
   },
   "resolutions": {
     "ansi-regex": "^5.0.1",

@@ -18,8 +18,9 @@ export class MyPropage extends HelperMethods {
 
   // This method is used to select the OK button at the beginning of My Provisioning App
 
-  async selectOK() {
+  async selectOK(screen: CustomWorld) {
     await this.iClick(MyproSelectors.OKbutton)
+    await this.iGetParameter(screen, "Login successful")
   }
 
   // This method is used to select MyBI Homescreen
@@ -81,11 +82,16 @@ export class MyPropage extends HelperMethods {
 
   async selectYearMonthCountryValues(year: string, month: string, country: string) {
     await this.iClick(MyproSelectors.PeriodYearDropDown);
-    await this.iSelectValue(MyproSelectors.PeriodYearDropDown, year);
+    var Year = await this.iSelectValue(MyproSelectors.PeriodYearDropDown, year);
     await this.iClick(MyproSelectors.PeriodMonthDropDown);
-    await this.iSelectValue(MyproSelectors.PeriodMonthDropDown, month);
+    var Month =await this.iSelectValue(MyproSelectors.PeriodMonthDropDown, month);
     await this.iClick(MyproSelectors.CountryDropDown);
-    await this.iSelectValue(MyproSelectors.CountryDropDown, country);
+    var Country =await this.iSelectValue(MyproSelectors.CountryDropDown, country);
+    let data = {
+      "Year selected" : (Year),
+      "Month selected" : (Month),
+      "Country selected" : (Country)
+    }
   }
 
   // This method is used for attaching Documents
@@ -94,7 +100,7 @@ export class MyPropage extends HelperMethods {
     await this.iWaitForPageLoad();
     await this.iClick(MyproSelectors.UploadWlPlButton);
 
-    await this.iWaitForTimeout(6000)
+    await this.iWaitForTimeout(Testdata.common.Project.TestProp.Delaylevel_5)
     await this.page.locator(MyproSelectors.BrowseButton).setInputFiles(eval("Testdata.features.My_Provision_App." + file));
     await this.iWaitForTimeout(Testdata.common.Project.TestProp.TimeoutLevel_2)
     await this.iClick(MyproSelectors.ImportButton);

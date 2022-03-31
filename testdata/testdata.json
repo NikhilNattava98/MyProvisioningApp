@@ -6,6 +6,7 @@
                 "Delaylevel_2": 2400,
                 "Delaylevel_3": 3400,
                 "Delaylevel_4": 4800,
+                "Delaylevel_5": 6600,
                 "TimeoutLevel_1": 10000,
                 "TimeoutLevel_2": 20000,
                 "TimeoutLevel_3": 900000

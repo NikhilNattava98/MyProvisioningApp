@@ -7,7 +7,7 @@ Given('User Access My Provisioning App on a web browser', async function (this: 
   try {
     let browserObject = await LaunchApplication()
     this.AUT_Application = new AUTApplication(browserObject);
-    await this.AUT_Application?.Mypropage.selectOK();
+    await this.AUT_Application?.Mypropage.selectOK(this);
   } catch (error: any) {
     await this.AUT_Application?.iScreenshot(this);
     return assert.fail(error)
@@ -72,9 +72,14 @@ Then('I Close Browser', async function (this: CustomWorld) {
   }
 });
 
-Then('User selects {string}, {string} and {string} from each dropdown', async function(this:CustomWorld, year, month, country) {
+Then('User selects {string}, {string} and {string} from each dropdown', async function (this: CustomWorld, year, month, country) {
   try {
     await this.AUT_Application?.Mypropage.selectYearMonthCountryValues(year, month, country)
+    let data = {
+      "Year selected" : (year),
+      "Month selected" : (month),
+      "Country selected" : (country)
+    }
   } catch (error: any) {
     await this.AUT_Application?.iScreenshot(this);
     return assert.fail(error)
